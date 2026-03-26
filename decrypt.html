@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Decrypt Message</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h2>🔓 Secure Message Decryption</h2>
+
+    <form action="/decrypt" method="post">
+        <textarea name="ciphertext" placeholder="Base64 Ciphertext"></textarea><br>
+        <input type="text" name="nonce" placeholder="Base64 Nonce"><br>
+        <input type="text" name="key" placeholder="Enter the same key"><br>
+        <button type="submit">Decrypt</button>
+    </form>
+
+    {% if result %}
+    <div class="result">
+        <h3>Result:</h3>
+        <pre>{{ result }}</pre>
+    </div>
+    {% endif %}
+
+    <hr>
+    <a href="/encrypt">Go to Encrypt Page</a>
+</body>
+</html>

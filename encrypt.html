@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Encrypt Message</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h2>🔐 Secure Message Encryption</h2>
+
+    <form action="/encrypt" method="post">
+        <textarea name="message" placeholder="Enter your message"></textarea><br>
+        <input type="text" name="key" placeholder="Enter 16, 24, or 32-char key"><br>
+        <button type="submit">Encrypt</button>
+    </form>
+
+    {% if result %}
+    <div class="result">
+        <h3>Result:</h3>
+        <pre>{{ result }}</pre>
+    </div>
+    {% endif %}
+
+    <hr>
+    <a href="/decrypt">Go to Decrypt Page</a>
+</body>
+</html>
